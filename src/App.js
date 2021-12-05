@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { Sugoku } from './Sugoku';
+import { Sugoku } from './components/Sugoku';
 
 function App() {
   return (

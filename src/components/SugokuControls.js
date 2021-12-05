@@ -10,7 +10,7 @@ const generateOptions = [
 ]
 
 export const SugokuControls = ({
-    regenerateGrid,
+    changeDifficulty,
     difficulty,
     solvedStatus,
     solvePuzzle,
@@ -20,7 +20,7 @@ export const SugokuControls = ({
     const renderGenerateOptions = () => {
         return (
             <div className="sugoku-generate">
-                <span>Generate: </span>
+                <span id="generate">Generate: </span>
                 {
                     generateOptions.map(genOp => {
                         return (
@@ -28,7 +28,7 @@ export const SugokuControls = ({
                                 if (genOp === 'Clear') {
                                     clearGrid()
                                 } else {
-                                    regenerateGrid(genOp.toLowerCase())
+                                    changeDifficulty(genOp.toLowerCase())
                                 }
                             }
                             }>{genOp}</button>
