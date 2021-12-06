@@ -106,10 +106,18 @@
   align-items: center;
 }
 
-.sugoku-cell span{
+.sugoku-cell input{
   font-size: 50px;
   font-weight: 400;
   font-family: 'Times New Roman', Times, serif;
+  width: 80%;
+  height: 80%;
+  border: none;
+  text-align: center;
+}
+
+.sugoku-cell input:focus{
+  outline: none;
 }
 
 .sugoku-footer{

@@ -1,11 +1,13 @@
 import React from 'react'
+import { SugoCell } from './SugoCell'
 
-export const SugokuBoard = ({ gridDataSet, loading, inProgress }) => {
+export const SugokuBoard = ({ gridDataSet, loading, inProgress, updateCellValue }) => {
+
 
     const generateGrid = () => {
 
         return Object.entries(gridDataSet).map(([key, value]) => {
-            return <div className="sugoku-cell" id={key}><span>{value}</span></div>
+            return <SugoCell cellKey={key} value={value} updateCellValue={updateCellValue}/>
 
         })
     }

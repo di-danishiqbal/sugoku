@@ -53,6 +53,12 @@ export class SugokuGrid {
         return this.gridData;
     }
 
+    editCellValue(cell, value) {
+        this.gridData[cell] = value;
+        this.gridData = { ...this.gridData }
+        return this.gridData;
+    }
+
     generateGridDataToSolve() {
         let solvePuzzleData = [];
         let currentRow = [];
@@ -76,7 +82,7 @@ export class SugokuGrid {
         return solvePuzzleData;
     }
 
-    generateGridDateFrom2dArray = (gridDataIn2dArray) => {
+    generateGridDataFrom2dArray = (gridDataIn2dArray) => {
         let flatArray = [];
         for (const row of gridDataIn2dArray) {
             for (const cell of row) {

@@ -52,7 +52,7 @@ export const Sugoku = () => {
         setInProgress(true);
         let payload = gridInstance.generateGridDataToSolve();
         let data = await SugouActions.solvePuzzle(payload);
-        let gridData = gridInstance.generateGridDateFrom2dArray(data.solution)
+        let gridData = gridInstance.generateGridDataFrom2dArray(data.solution)
         setGridDataSet(gridData);
         setSolvedStatus(data.status);
         setInProgress(false);
@@ -64,6 +64,12 @@ export const Sugoku = () => {
         let data = await SugouActions.validateGrid(payload);
         setSolvedStatus(data.status);
         setInProgress(false);
+    }
+
+
+    const updateCellValue = (cell, value) => {
+        let updatedGrid = gridInstance.editCellValue(cell, value);
+        setGridDataSet(updatedGrid);
     }
 
     const changeDifficulty = (difficulty) => {
@@ -90,6 +96,7 @@ export const Sugoku = () => {
         <div className="sugoku-container">
             <SugokuHeader />
             <SugokuBoard
+                updateCellValue={updateCellValue}
                 gridDataSet={gridDataSet}
                 loading={loading}
                 inProgress={inProgress}
