@@ -89,6 +89,7 @@
   font-size: 40px;
   color: #653fe6;
   animation: spin 1s infinite;
+  z-index: 2;
 }
 
 .sugoku-board{
@@ -290,7 +291,7 @@ button{
     border-left: 1px solid #fa54f1;
   }
 
-  .sugoku-cell span{
+  .sugoku-cell input{
     font-size: 30px;
     font-weight: 300;
   }
